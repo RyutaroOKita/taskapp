@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1BA4F625B0609E000DBE91 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1BA4F525B0609E000DBE91 /* Task.swift */; };
 		5D5AF24925ABBB8800177295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5AF24825ABBB8800177295 /* AppDelegate.swift */; };
 		5D5AF24B25ABBB8800177295 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5AF24A25ABBB8800177295 /* SceneDelegate.swift */; };
 		5D5AF24D25ABBB8800177295 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5AF24C25ABBB8800177295 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		1B1421DE3CAF62629FEEAA58 /* Pods-taskapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taskapp.debug.xcconfig"; path = "Target Support Files/Pods-taskapp/Pods-taskapp.debug.xcconfig"; sourceTree = "<group>"; };
+		5D1BA4F525B0609E000DBE91 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5D5AF24525ABBB8800177295 /* taskapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5AF24825ABBB8800177295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D5AF24A25ABBB8800177295 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				5D5AF24825ABBB8800177295 /* AppDelegate.swift */,
 				5D5AF24A25ABBB8800177295 /* SceneDelegate.swift */,
 				5D5AF24C25ABBB8800177295 /* ViewController.swift */,
+				5D1BA4F525B0609E000DBE91 /* Task.swift */,
 				5D5AF25C25ABC0A400177295 /* InputViewController.swift */,
 				5D5AF24E25ABBB8800177295 /* Main.storyboard */,
 				5D5AF25125ABBB8A00177295 /* Assets.xcassets */,
@@ -91,7 +94,6 @@
 				1B1421DE3CAF62629FEEAA58 /* Pods-taskapp.debug.xcconfig */,
 				D427FFB60D756F0CBE2CC086 /* Pods-taskapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -212,6 +214,7 @@
 			files = (
 				5D5AF24D25ABBB8800177295 /* ViewController.swift in Sources */,
 				5D5AF24925ABBB8800177295 /* AppDelegate.swift in Sources */,
+				5D1BA4F625B0609E000DBE91 /* Task.swift in Sources */,
 				5D5AF24B25ABBB8800177295 /* SceneDelegate.swift in Sources */,
 				5D5AF25D25ABC0A400177295 /* InputViewController.swift in Sources */,
 			);
