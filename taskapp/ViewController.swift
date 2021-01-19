@@ -33,31 +33,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
+        print(taskArray)
+        
     }
     
    
         func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            
-            let predicate = NSPredicate(format:"category == %@")
-            taskArray = realm.objects(Task.self).filter(predicate)
-            
-            tableView.reloadData()
+                
+                if (categorysearch.text! == ""){
+                    taskArray = realm.objects(Task.self)
+                    tableView.reloadData()
 
+                }else{
+                    let predicate = NSPredicate(format:"category == %@",categorysearch.text!)
+                                   taskArray = realm.objects(Task.self).filter(predicate)
+                                   print(taskArray)
+                                   tableView.reloadData()
+            }
         }
         
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskArray.count
-       
-    }
+        
+            return taskArray.count
+        }
+    
+    
     
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
         let task = taskArray[indexPath.row]
         cell.textLabel?.text = task.title
         
@@ -66,10 +74,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let dateString:String = formatter.string(from: task.date)
         cell.detailTextLabel?.text = dateString
+        
+      
         return cell
+        }
         
-        
-    }
+
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier:"cellSegue", sender: nil)
