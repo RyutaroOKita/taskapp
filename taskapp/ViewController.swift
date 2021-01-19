@@ -9,24 +9,48 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var categorysearch: UISearchBar!
+    
     
     let realm = try! Realm()
     
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date",ascending: true)
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
         tableView.delegate = self
-        tableView.delegate = self
+        tableView.dataSource = self
+        
+        //デリゲートを設定
+        categorysearch.delegate = self
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
     }
+    
+   
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            
+            guard let searchText = searchBar.text else {
+                       return
+                   }
+                   print(searchText)
+        }
+        
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArray.count
+       
     }
+    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,6 +133,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
     }
     
-    
+     
 }
+
+
+
 
