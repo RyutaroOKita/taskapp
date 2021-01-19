@@ -18,7 +18,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date",ascending: true)
     
-    var tanDogs = realm.objects(Task.self).filter("category:String = ","")
+    let predicate = NSPredicate(format:@"category == %@")
+    tanDogs = realm.objects(Task.self).filter(predicate)
 
     
     override func viewDidLoad() {
