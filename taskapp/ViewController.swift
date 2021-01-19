@@ -38,8 +38,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
    
         func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             
-            let predicate = NSPredicate(format:@"category == %@")
-            tanDogs = realm.objects(Task.self).filter(predicate)
+            let predicate = NSPredicate(format:"category == %@")
+            taskArray = realm.objects(Task.self).filter(predicate)
+            
+            tableView.reloadData()
 
         }
         
