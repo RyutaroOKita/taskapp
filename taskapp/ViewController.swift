@@ -18,8 +18,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date",ascending: true)
     
-    let predicate = NSPredicate(format:@"category == %@")
-    tanDogs = realm.objects(Task.self).filter(predicate)
 
     
     override func viewDidLoad() {
@@ -40,10 +38,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
    
         func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             
-            guard let searchText = searchBar.text else {
-                       return
-                   }
-                   print(searchText)
+            let predicate = NSPredicate(format:@"category == %@")
+            tanDogs = realm.objects(Task.self).filter(predicate)
+
         }
         
     
